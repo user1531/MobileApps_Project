@@ -55,7 +55,7 @@ const StaffListScreen = ({ navigation, route }) => {
         style={styles.addButton}
         onPress={() => navigation.navigate("AddEditProfile", { staffId: null })}
       >
-        <Text style={styles.addButtonText}>Add</Text>
+        <Text style={[styles.addButtonText, { fontSize: fontSize }]}>Add</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -91,21 +91,19 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: "#ffffff",
-    fontSize: 16,
     fontWeight: "bold",
   },
   settingsButton: {
     position: "absolute",
-    bottom: 80,
-    right: 20,
-    backgroundColor: "#4CAF50",
+    bottom: 20,
+    left: 20,
+    backgroundColor: "#941a1d",
     padding: 15,
     borderRadius: 30,
     elevation: 5,
   },
   settingsButtonText: {
     color: "#ffffff",
-    fontSize: 16,
     fontWeight: "bold",
   },
 });

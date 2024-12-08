@@ -17,8 +17,17 @@ const FontSettingsScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={[styles.text, { fontSize }]}>Sample Text</Text>
       <View style={styles.buttonContainer}>
-        <Button title="Increase Font Size" onPress={increaseFontSize} />
-        <Button title="Decrease Font Size" onPress={decreaseFontSize} />
+        <Button
+          title="Increase Font Size"
+          onPress={increaseFontSize}
+          color="#941a1d"
+        />
+        <View style={styles.buttonSpacing} />
+        <Button
+          title="Decrease Font Size"
+          onPress={decreaseFontSize}
+          color="#941a1d"
+        />
       </View>
     </View>
   );
@@ -28,6 +37,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
   text: { marginBottom: 20 },
   buttonContainer: { flexDirection: "row", marginBottom: 20 },
+  buttonSpacing: { width: 10 },
 });
 
 export default FontSettingsScreen;
