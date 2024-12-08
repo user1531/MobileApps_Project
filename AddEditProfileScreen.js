@@ -39,7 +39,7 @@ const AddEditProfileScreen = ({ route, navigation }) => {
       const data = await response.json();
       setName(data.name);
       setPhone(data.phone);
-      setDepartment(data.department?.id || "");
+      setDepartment(data.department ? data.department.id : null);
       setStreet(data.address.street);
       setCity(data.address.city);
       setState(data.address.state);
@@ -120,7 +120,7 @@ const AddEditProfileScreen = ({ route, navigation }) => {
           onValueChange={(itemValue) => setDepartment(itemValue)}
           style={{ fontSize: fontSize }}
         >
-          <Picker.Item label="Select Department" value="" />
+          <Picker.Item label="Select Department" value={null} />
           {departments.map((dept) => (
             <Picker.Item key={dept.id} label={dept.name} value={dept.id} />
           ))}
@@ -168,10 +168,6 @@ const AddEditProfileScreen = ({ route, navigation }) => {
         style={[styles.input, { fontSize: fontSize }]}
       />
 
-      {/* <Button
-        title={staffId ? "Update Profile" : "Add Profile"}
-        onPress={handleSubmit}
-      /> */}
       <TouchableOpacity
         style={[styles.button, { fontSize: fontSize }]}
         onPress={handleSubmit}
